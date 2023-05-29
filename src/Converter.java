@@ -1,5 +1,3 @@
-// Author: Dimitris Papachristoudis 2312
-
 /******************************************************************************
  *  Compilation:  javac Converter.java
  *  Execution:    java Converter input.mps
