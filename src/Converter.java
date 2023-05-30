@@ -1,5 +1,4 @@
 // Author: Dimitris Papachristoudis 2312
-// email: mai2312@uom.edu.gr
 // Last-update: 4/2/2013
 
 
