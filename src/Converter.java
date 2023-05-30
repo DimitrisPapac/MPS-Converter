@@ -569,8 +569,6 @@ public class Converter
 						String obfName = myConverter.getObfName();
 						String type = (myConverter.getMinMax() == -1? "min": "max");
 
-						// Display results
-
 						System.out.println("----------------------------------------");
 						System.out.println("Problem Type: " + type);
 						System.out.println("Objective Function Name: " + obfName);
