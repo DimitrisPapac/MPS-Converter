@@ -1,3 +1,8 @@
+// Author: Dimitris Papachristoudis 2312
+// email: mai2312@uom.edu.gr
+// Last-update: 4/2/2013
+
+
 /******************************************************************************
  *  Compilation:  javac Converter.java
  *  Execution:    java Converter input.mps
@@ -86,14 +91,14 @@ public class Converter
 	private int m;	        	// Number of constraints
 	private int n;       	  	// Number of variables
 	private byte minmax;    	// -1 for minimization problems or 1 for maximization problems
-	private String obfName;	 	// The object function's name 
+	private String obfName;	 	// The objective function's name 
 	private double[][] A;   	// Array of coefficients
 	private byte[] Eqin;    	// A vector indicating equality for each constraint:
 					// -1: indicates <=
 					// 0: indicates ==
 					// 1: indicates >=
 	private double[] b;	   	// A vector containing the RHS' for each constraint
-	private double[] C;     	// Object function coefficients
+	private double[] C;     	// Objective function coefficients
 
 
 	/**
@@ -221,7 +226,7 @@ public class Converter
 						}
 						else if (line.matches(OBJNAME))
 						{
-							// If the object function's name has not been initialized
+							// If the objective function's name has not been initialized
 							if (obfName == null)
 							{
 								tokenizer.nextToken();
@@ -333,7 +338,7 @@ public class Converter
 				{
 					int varId = var.getValue().intValue();
 
-					// Retrieve coefficients for the Object Function
+					// Retrieve coefficients for the Objective Function
 					Double temp = obFunctionCoeffs.get(var.getKey());
 					if (temp == null)
 						C[varId] = 0;
@@ -451,7 +456,7 @@ public class Converter
 	/**
      	* A method for retrieving the objective function's name.
      	*
-     	* @return the obj function name if the file has been
+     	* @return the objective function name if the file has been
         * parsed successfully.
      	*/
 	public String getObfName()
@@ -573,7 +578,7 @@ public class Converter
 
 						System.out.println("----------------------------------------");
 						System.out.println("Problem Type: " + type);
-						System.out.println("Object Function Name: " + obfName);
+						System.out.println("Objective Function Name: " + obfName);
 						System.out.println("Number of Constraints: " + m);
 						System.out.println("Number of Variables: " + n);
 
@@ -581,7 +586,7 @@ public class Converter
 						// for some benchmarks, and is thus omitted by default.
 						if (verbose)
 						{
-							System.out.println("Object Function coefficients:");
+							System.out.println("Objective Function coefficients:");
 							for (int i=0; i<n; i++)
 								System.out.print(objFunction[i] + "\t");
 							System.out.println();
